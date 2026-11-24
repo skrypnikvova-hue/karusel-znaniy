@@ -36,14 +36,14 @@ h1{font-family:Unbounded;font-weight:900;font-size:clamp(30px,5.4vw,58px);line-h
 .btn{display:inline-block;text-decoration:none;font-weight:800;font-size:14px;padding:12px 20px;border-radius:12px;transition:.18s;border:1px solid transparent}
 .btn.sun{background:var(--sun);color:#1a1206}.btn.sun:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,176,32,.35)}
 .btn.ghost{border-color:#3a4360;color:#e8ecf8}.btn.ghost:hover{border-color:var(--sun);color:var(--sun)}
-.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:38px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:12px;margin-top:38px}
 .stat{border:1px solid #2a3247;border-radius:14px;padding:14px 16px;background:rgba(20,24,38,.6)}
 .stat b{display:block;font-family:Unbounded;font-size:24px;color:var(--sun)}
 .stat span{font-size:12px;color:#9aa3bd}
 section{padding:64px 0}
 h2{font-family:Unbounded;font-weight:700;font-size:clamp(22px,3.4vw,34px);margin-bottom:8px}
 .sub{color:var(--mut);margin-bottom:28px;max-width:64ch}
-.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:18px}
 .app{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden;transition:.2s}
 .app:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(23,19,32,.10)}
 .app:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--c)}
@@ -99,6 +99,18 @@ h1{font-size:26px;max-width:100%}
 .heroArt{width:220px;height:220px;margin:20px auto 0}
 .stars{inset:-20px}
 .strip{grid-template-columns:1fr 1fr}
+}.apps,.rel,.strip{min-width:0}
+@media(min-width:1101px){.strip{grid-template-columns:repeat(4,minmax(0,1fr))}.stat span{font-size:11px}}
+@media(max-width:720px){
+html,body{max-width:100vw}
+.wrap,.bar{max-width:100vw}
+h1{font-size:24px;line-height:1.15;max-width:calc(100vw - 32px)}
+.hero p{max-width:calc(100vw - 32px)}
+.strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stat{min-width:0}
+.stat span{overflow-wrap:break-word}
+.cta{width:100%}
+.btn{flex:1 1 auto;text-align:center}
 }</style></head><body>
 <header><div class="bar"><div class="sunlogo"></div><span class="logo">karusel-znaniy</span>
 <nav><a href="#apps">Приложения</a><a href="#rel">Релизы</a><a href="#about">О нас</a></nav></div></header>
