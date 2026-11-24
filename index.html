@@ -18,8 +18,8 @@ body{font:16px/1.6 Manrope,system-ui,sans-serif;color:var(--ink);background:var(
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;z-index:40;background:rgba(247,242,231,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:12px;padding:14px 20px;max-width:1120px;margin:0 auto}
-.sun{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 0deg,var(--sun),var(--mag),var(--vio),var(--blue),var(--green),var(--sun));animation:spin 16s linear infinite;position:relative;flex:none}
-.sun:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--paper)}
+.sunlogo{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 0deg,var(--sun),var(--mag),var(--vio),var(--blue),var(--green),var(--sun));animation:spin 16s linear infinite;position:relative;flex:none}
+.sunlogo:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--paper)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .logo{font-family:Unbounded;font-weight:700;font-size:17px;white-space:nowrap}
 nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
@@ -76,7 +76,7 @@ footer a{color:#9aa3bd;text-decoration:none;font-size:13px}footer a:hover{color:
 .apps{grid-template-columns:1fr}
 }
 </style></head><body>
-<header><div class="bar"><div class="sun"></div><span class="logo">karusel-znaniy</span>
+<header><div class="bar"><div class="sunlogo"></div><span class="logo">karusel-znaniy</span>
 <nav><a href="#apps">Приложения</a><a href="#rel">Релизы</a><a href="#about">О нас</a></nav></div></header>
 <div class="hero"><div class="wrap">
 <div class="kicker">независимая мастерская приложений</div>
