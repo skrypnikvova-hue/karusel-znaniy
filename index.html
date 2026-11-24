@@ -1,0 +1,139 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0e1a">
+<title>karusel-znaniy — приложения, которые учат и берегут</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b0e1a'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23ffb020'/%3E%3Cg stroke='%23ffb020' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M32 6v8M32 50v8M6 32h8M50 32h8M13 13l6 6M45 45l6 6M51 13l-6 6M19 45l-6 6'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:title" content="karusel-znaniy — семейная мастерская приложений">
+<meta property="og:description" content="LunoXod и Ivetta PDD: офлайн, без рекламы, с уважением к вашим данным. Релизы, ссылки и веб-версии.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0b0e1a;--ink:#171320;--paper:#f7f2e7;--card:#fffdf6;--line:#e3d9c4;--mut:#7c7260;--sun:#ffb020;--amber:#c77800;--blue:#3d5afe;--green:#16a34a;--mag:#ff2d78;--vio:#8b5cf6;--track:#ece4d2;--thumb:#c9bda3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:clip}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:var(--track)}::-webkit-scrollbar-thumb{background:var(--thumb);border-radius:8px;border:2px solid var(--track)}::-webkit-scrollbar-thumb:hover{background:var(--amber)}
+*{scrollbar-width:thin;scrollbar-color:var(--thumb) var(--track)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:40;background:rgba(247,242,231,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding:14px 20px;max-width:1120px;margin:0 auto}
+.sun{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 0deg,var(--sun),var(--mag),var(--vio),var(--blue),var(--green),var(--sun));animation:spin 16s linear infinite;position:relative;flex:none}
+.sun:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--paper)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo{font-family:Unbounded;font-weight:700;font-size:17px;white-space:nowrap}
+nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;padding:7px 11px;border-radius:999px;border:1px solid transparent;transition:.18s}
+nav a:hover{border-color:var(--sun);color:var(--amber)}
+.hero{background:var(--night);color:#f2ecdd;position:relative;overflow:hidden;padding:76px 0 84px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(55% 60% at 15% 0%,rgba(255,176,32,.22),transparent 60%),radial-gradient(45% 55% at 90% 20%,rgba(61,90,254,.20),transparent 60%),radial-gradient(50% 60% at 55% 110%,rgba(255,45,120,.14),transparent 60%);animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(2%,2%,0) scale(1.05)}}
+.hero .wrap{position:relative}
+.kicker{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--sun);font-weight:800}
+h1{font-family:Unbounded;font-weight:900;font-size:clamp(30px,5.4vw,58px);line-height:1.12;margin:14px 0 18px;max-width:16ch}
+.hero p{max-width:56ch;color:#cfc6b4;font-size:17px}
+.cta{display:inline-flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:800;font-size:14px;padding:12px 20px;border-radius:12px;transition:.18s;border:1px solid transparent}
+.btn.sun{background:var(--sun);color:#1a1206}.btn.sun:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,176,32,.35)}
+.btn.ghost{border-color:#3a4360;color:#e8ecf8}.btn.ghost:hover{border-color:var(--sun);color:var(--sun)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:38px}
+.stat{border:1px solid #2a3247;border-radius:14px;padding:14px 16px;background:rgba(20,24,38,.6)}
+.stat b{display:block;font-family:Unbounded;font-size:24px;color:var(--sun)}
+.stat span{font-size:12px;color:#9aa3bd}
+section{padding:64px 0}
+h2{font-family:Unbounded;font-weight:700;font-size:clamp(22px,3.4vw,34px);margin-bottom:8px}
+.sub{color:var(--mut);margin-bottom:28px;max-width:64ch}
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.app{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden;transition:.2s}
+.app:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(23,19,32,.10)}
+.app:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--c)}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bgc);color:var(--c);margin-bottom:12px}
+.app h3{font-family:Unbounded;font-size:20px;margin-bottom:8px}
+.app p{color:var(--mut);font-size:14px;margin-bottom:16px}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;transition:.15s}
+.links a:hover{border-color:var(--c);color:var(--c)}
+.links a.off{opacity:.45;pointer-events:none}
+.rel{display:grid;gap:14px}
+.rel article{display:grid;grid-template-columns:110px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.rel time{font-family:Unbounded;font-size:13px;color:var(--amber);font-weight:700}
+.rel h4{font-size:16px;font-weight:800;margin-bottom:4px}
+.rel p{color:var(--mut);font-size:14px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.tag.live{background:#e5f6ec;color:var(--green)}.tag.mod{background:#fff3d6;color:var(--amber)}.tag.soon{background:#ece9ff;color:var(--vio)}
+.about{background:var(--night);color:#cfc6b4}
+.about h2{color:#f2ecdd}
+.about p{max-width:70ch;margin-bottom:12px}
+footer{background:var(--night);color:#8b93ad;border-top:1px solid #2a3247;padding:34px 0 40px;text-align:center}
+.sig{font-family:Unbounded;font-weight:700;font-size:15px;color:#f2ecdd;text-align:center;line-height:1.7}
+.sig small{display:block;font-size:15px;font-weight:700;color:#f2ecdd}
+footer .fl{display:flex;gap:14px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+footer a{color:#9aa3bd;text-decoration:none;font-size:13px}footer a:hover{color:var(--sun)}
+@media(max-width:720px){
+.bar{padding:10px 14px;gap:9px}.logo{font-size:14px}nav a{padding:6px 8px;font-size:12px}
+.hero{padding:52px 0 60px}section{padding:44px 0}
+.rel article{grid-template-columns:1fr;gap:6px}
+.apps{grid-template-columns:1fr}
+}
+</style></head><body>
+<header><div class="bar"><div class="sun"></div><span class="logo">karusel-znaniy</span>
+<nav><a href="#apps">Приложения</a><a href="#rel">Релизы</a><a href="#about">О нас</a></nav></div></header>
+<div class="hero"><div class="wrap">
+<div class="kicker">семейная мастерская приложений</div>
+<h1>Учим, бережём и дарим — без рекламы и страха</h1>
+<p>Мы — семья, которая делает приложения как подарки: тренажёр ПДД для дочери, лунный календарь для всех, кто живёт в ритме Луны. Каждое приложение работает офлайн, уважает ваши данные и не продаёт ваше внимание.</p>
+<div class="cta"><a class="btn sun" href="#apps">Смотреть приложения</a><a class="btn ghost" href="#rel">Что готовится</a></div>
+<div class="strip">
+<div class="stat"><b>88</b><span>установок LunoXod в RuStore</span></div>
+<div class="stat"><b>3 839</b><span>просмотров страницы LunoXod</span></div>
+<div class="stat"><b>2</b><span>приложения в магазине</span></div>
+<div class="stat"><b>0</b><span>рекламы и подписок-ловушек</span></div>
+</div></div></div>
+<section id="apps"><div class="wrap">
+<h2>Приложения флота</h2>
+<p class="sub">Скачивайте в RuStore или открывайте веб-версию прямо в браузере — прогресс сохраняется, интернет не нужен.</p>
+<div class="apps">
+<article class="app" style="--c:#c9a227;--bgc:#fff3d6">
+<span class="badge">опубликовано · бесплатно</span>
+<svg width="44" height="44" viewBox="0 0 64 64" style="margin-bottom:10px"><circle cx="32" cy="32" r="30" fill="#0b0e1a"/><path d="M40 12a24 24 0 1 0 0 40 26 26 0 0 1 0-40z" fill="#ffb020"/><circle cx="46" cy="20" r="2" fill="#f2ecdd"/><circle cx="50" cy="34" r="1.5" fill="#f2ecdd"/></svg>
+<h3>LunoXod — Лунный календарь</h3>
+<p>Точный лунный календарь с рекомендациями на каждый день: фазы, лунные сутки, благоприятные дела. Наш первый подарок людям.</p>
+<div class="links"><a href="https://www.rustore.ru/catalog/app/com.example.lunoxod" target="_blank" rel="noopener">RuStore</a><a class="off" href="#">веб-версия скоро</a></div>
+</article>
+<article class="app" style="--c:#3d5afe;--bgc:#ece9ff">
+<span class="badge">на модерации · бесплатно</span>
+<svg width="44" height="44" viewBox="0 0 64 64" style="margin-bottom:10px"><circle cx="32" cy="32" r="30" fill="#ece9ff"/><circle cx="32" cy="32" r="18" fill="none" stroke="#3d5afe" stroke-width="6"/><circle cx="32" cy="32" r="6" fill="#3d5afe"/><path d="M32 14v12M14 32h12M50 32h-12" stroke="#3d5afe" stroke-width="5"/></svg>
+<h3>Ivetta PDD — билеты ПДД РФ</h3>
+<p>Тренажёр правил дорожного движения: билеты, разбор ошибок, режим экзамена как в ГИБДД. Полностью офлайн, с любовью к дочери.</p>
+<div class="links"><a href="https://www.rustore.ru/catalog/app/ru.karuselznaniy.ivettapdd" target="_blank" rel="noopener">RuStore</a><a href="https://vladimir-skr.github.io/ivetta-pdd/" target="_blank" rel="noopener">веб-версия</a></div>
+</article>
+<article class="app" style="--c:#ff2d78;--bgc:#ffe9f1">
+<span class="badge">готовится</span>
+<svg width="44" height="44" viewBox="0 0 64 64" style="margin-bottom:10px"><circle cx="32" cy="32" r="30" fill="#ffe9f1"/><path d="M32 12l5 13 13 5-13 5-5 13-5-13-13-5 13-5z" fill="#ff2d78"/><circle cx="47" cy="17" r="3" fill="#ffb020"/><circle cx="17" cy="47" r="2" fill="#8b5cf6"/></svg>
+<h3>Следующие подарки</h3>
+<p>Мастерская не останавливается: новые приложения флота появятся здесь с ссылками на скачивание и веб-версии сразу после релиза.</p>
+<div class="links"><a href="#rel">следить за релизами</a></div>
+</article>
+</div></div></section>
+<section id="rel"><div class="wrap">
+<h2>Релизы и планы</h2>
+<p class="sub">Честная хроника: что уже вышло, что на модерации и что мы готовим прямо сейчас.</p>
+<div class="rel">
+<article><time>24.11.2026</time><div><h4>LunoXod 1.6 <span class="tag mod">загружено в RuStore</span></h4><p>Деликатная напоминалка об оценке и отзыве на третьем запуске версии и анонимная телеметрия karusel-znaniy statistics. Логика беззвучных уведомлений и выданные разрешения не изменены.</p></div></article>
+<article><time>24.11.2026</time><div><h4>Ivetta PDD 1.1 <span class="tag mod">на модерации</span></h4><p>Шкала прогресса как в веб-версии, спокойный экран без рывков, напоминалка об оценке, ссылка на политику конфиденциальности.</p></div></article>
+<article><time>18.11.2026</time><div><h4>LunoXod 1.5 <span class="tag live">опубликовано</span></h4><p>Текущая версия лунного календаря в RuStore: 88 установок и почти четыре тысячи просмотров страницы — спасибо, что вы с нами.</p></div></article>
+<article><time>скоро</time><div><h4>Ivetta PDD 2.0 <span class="tag soon">в плане</span></h4><p>Оплата разового доступа 399 ₽ через биллинг RuStore: одна покупка — навсегда, без подписок.</p></div></article>
+</div></div></section>
+<section id="about" class="about"><div class="wrap">
+<h2>О мастерской</h2>
+<p>karusel-znaniy — семейная мастерская: Владимир, Елена и Иветта. Мы делаем приложения, которые хочется оставить на телефоне: без рекламы, без тёмных паттернов, с офлайн-базой и сохранением прогресса.</p>
+<p>Наши продукты выпускаются под ИП Грюнберг Елена Александровна. Статистику установок и оплат мы ведём прозрачно и анонимно — только чтобы понимать, что полезно, и чинить то, что мешает.</p>
+<p>Письма и идеи: сообщество ВКонтакте ниже. Каждая оценка в магазине — это топливо для семейной мастерской.</p>
+</div></section>
+<footer><div class="wrap">
+<div class="sig">Елена Грюнберг<small>karusel-znaniy</small></div>
+<div class="fl"><a href="https://vk.ru/karusel_znaniy_app" target="_blank" rel="noopener">ВКонтакте</a><a href="https://vladimir-skr.github.io/ivetta-pdd/privacy.html" target="_blank" rel="noopener">Политика Ivetta PDD</a><a href="./privacy-lunoxod.html">Политика LunoXod</a><a href="https://www.rustore.ru/catalog/app/com.example.lunoxod" target="_blank" rel="noopener">RuStore</a></div>
+<div style="font-size:12px">© 2026 karusel-znaniy · сделано семьёй для людей</div>
+</div></footer>
+<script>var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform="none";io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll(".app,.rel article,.stat").forEach(function(el){el.style.opacity=0;el.style.transform="translateY(18px)";el.style.transition="opacity .6s ease,transform .6s ease";io.observe(el)});</script>
+</body></html>
