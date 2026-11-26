@@ -223,7 +223,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
 addEventListener('resize',fit);
 })();
 </script>
-<script id="kz-hero-shift-v1">
+<script id="kz-hero-shift-v2">
 (function(){
 var imgs=[].slice.call(document.querySelectorAll('img[src*="kz-logo"]'));
 var hi=null;for(var i=0;i<imgs.length;i++){if(imgs[i].clientWidth>100){hi=imgs[i];break;}}
@@ -231,7 +231,7 @@ if(!hi)return;
 var el=hi.parentElement;
 while(el&&el!==document.body){var p=getComputedStyle(el).position;if(p==='absolute'||p==='relative'){break;}el=el.parentElement;}
 if(!el||el===document.body)return;
-el.style.left='-7%';el.style.right='7%';
+el.style.left='-14%';el.style.right='14%';
 })();
 </script>
 </body></html>
