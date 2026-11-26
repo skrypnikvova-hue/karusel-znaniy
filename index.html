@@ -244,4 +244,21 @@ if(document.readyState==='complete'){setTimeout(heal,1200);}else{addEventListene
 setTimeout(heal,3000);
 })();
 </script>
+<script id="kz-hero-fit-v1">
+(function(){
+function fit(){
+var imgs=[].slice.call(document.querySelectorAll('img[src*="kz-logo"]'));
+var hi=null;for(var i=0;i<imgs.length;i++){if(imgs[i].clientWidth>100){hi=imgs[i];break;}}
+if(!hi)return;
+var w=hi.parentElement;
+while(w&&w!==document.body){var p=getComputedStyle(w).position;if(p==='absolute'||p==='relative'){break;}w=w.parentElement;}
+if(w&&w!==document.body){w.style.left='';w.style.right='';}
+var c=hi.parentElement;
+while(c&&c!==document.body){if(c.offsetWidth>=500&&getComputedStyle(c).position!=='static'){break;}c=c.parentElement;}
+if(c&&c!==document.body){c.style.marginLeft='-8%';c.style.marginTop='-6%';}
+}
+if(document.readyState==='complete'){fit();}else{addEventListener('load',fit);}
+addEventListener('resize',fit);
+})();
+</script>
 </body></html>
