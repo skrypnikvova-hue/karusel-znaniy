@@ -133,10 +133,27 @@ body>*{max-width:100%}
 h1{font-size:20px !important}
 .hero p{font-size:13px !important}
 .heroArt{width:180px !important;height:180px !important}
-}</style></head><body>
-<header><div class="bar"><div class="sunlogo"></div><span class="logo">karusel-znaniy</span>
+}
+.kzlogo{width:34px;height:34px;flex:none;animation:kzspin 12s linear infinite}
+@keyframes kzspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.kzlogo{animation:none}}
+.heroArt{perspective:900px}
+.kz-tumble{position:absolute;inset:0;margin:auto;width:clamp(220px,32vw,420px);height:clamp(220px,32vw,420px);transform-style:preserve-3d;opacity:0;transition:opacity .5s}
+.kz-y,.kz-x{position:absolute;inset:0;transform-style:preserve-3d}
+.kzhero{width:100%;height:100%;display:block;backface-visibility:visible;filter:drop-shadow(0 0 18px rgba(255,176,32,.55)) drop-shadow(0 0 34px rgba(255,45,120,.35))}
+.kz-z{animation:kzZ 18s linear infinite}
+.kz-y{animation:kzY 11s cubic-bezier(.45,.05,.55,.95) infinite}
+.kz-x{animation:kzX 7s cubic-bezier(.6,.04,.4,.96) infinite}
+@keyframes kzZ{from{transform:rotateZ(0)}to{transform:rotateZ(360deg)}}
+@keyframes kzY{from{transform:rotateY(0)}to{transform:rotateY(-360deg)}}
+@keyframes kzX{from{transform:rotateX(0)}to{transform:rotateX(360deg)}}
+.heroArt.kz-ready .kz-tumble{opacity:1}
+.heroArt.kz-ready .moon{display:none}
+@media(prefers-reduced-motion:reduce){.kz-z,.kz-y,.kz-x{animation:none}}
+</style></head><body>
+<header><div class="bar"><img class="kzlogo" src="assets/kz-logo.png" alt="" width="34" height="34"><span class="logo">karusel-znaniy</span>
 <nav><a href="#apps">Приложения</a><a href="#rel">Релизы</a><a href="#about">О нас</a></nav></div></header>
-<div class="hero"><div class="wrap"><div class="heroArt" aria-hidden="true"><div class="stars"></div><div class="orbit"><b></b><b></b><b></b></div><div class="moon"><i></i></div></div>
+<div class="hero"><div class="wrap"><div class="heroArt" aria-hidden="true"><div class="stars"></div><div class="orbit"><b></b><b></b><b></b></div><div class="kz-tumble kz-z"><div class="kz-y"><div class="kz-x"><img class="kzhero" src="assets/kz-logo.png" alt=""></div></div></div><div class="moon"><i></i></div></div>
 <div class="kicker">независимая мастерская приложений</div>
 <h1>Учим, бережём и дарим — без рекламы и страха</h1>
 <p>Мы делаем приложения как подарки: тренажёр ПДД для тех, кто учится водить, и лунный календарь для всех, кто живёт в ритме Луны. Каждое приложение работает офлайн, уважает ваши данные и не продаёт ваше внимание.</p>
@@ -194,4 +211,5 @@ h1{font-size:20px !important}
 <div style="font-size:12px">© 2026 karusel-znaniy · сделано для людей</div>
 </div></footer>
 <script>var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform="none";io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll(".app,.rel article,.stat").forEach(function(el){el.style.opacity=0;el.style.transform="translateY(18px)";el.style.transition="opacity .6s ease,transform .6s ease";io.observe(el)});</script>
+<script>(function(){var art=document.querySelector(".heroArt");var img=art&&art.querySelector(".kzhero");if(!art||!img)return;function ready(){art.classList.add("kz-ready")}if(img.complete&&img.naturalWidth>0){ready()}else{img.addEventListener("load",ready);img.addEventListener("error",function(){})}})();</script>
 </body></html>
