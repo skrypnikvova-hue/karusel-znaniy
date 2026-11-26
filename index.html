@@ -161,7 +161,7 @@ h1{font-size:20px !important}
 <div class="strip">
 <div class="stat"><b>2</b><span>приложения в магазине</span></div>
 <div class="stat"><b>3 839</b><span>просмотров страниц</span></div>
-<div class="stat"><b>88</b><span>установок LunoXod в RuStore</span></div>
+<div class="stat"><b>88</b><span>установок</span></div>
 <div class="stat"><b id="st-rating">5.0</b><span>средняя оценка всех приложений</span></div>
 </div></div></div>
 <section id="apps"><div class="wrap">
@@ -232,6 +232,16 @@ var el=hi.parentElement;
 while(el&&el!==document.body){var p=getComputedStyle(el).position;if(p==='absolute'||p==='relative'){break;}el=el.parentElement;}
 if(!el||el===document.body)return;
 el.style.left='-14%';el.style.right='14%';
+})();
+</script>
+<script id="kz-reveal-failsafe-v1">
+(function(){
+function heal(){
+var els=[].slice.call(document.querySelectorAll('h1, img[src*="kz-logo"]'));
+for(var i=0;i<els.length;i++){var e=els[i];var s=getComputedStyle(e);if(parseFloat(s.opacity)<0.05){e.style.opacity='1';}if(s.visibility==='hidden'){e.style.visibility='visible';}}
+}
+if(document.readyState==='complete'){setTimeout(heal,1200);}else{addEventListener('load',function(){setTimeout(heal,1200);});}
+setTimeout(heal,3000);
 })();
 </script>
 </body></html>
