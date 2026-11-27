@@ -54,6 +54,8 @@ h2{font-family:Unbounded;font-weight:700;font-size:clamp(22px,3.4vw,34px);margin
 .links a{font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;transition:.15s}
 .links a:hover{border-color:var(--c);color:var(--c)}
 .links a.off{opacity:.45;pointer-events:none}
+.price{display:inline-block;max-width:100%;font-size:12px;font-weight:800;letter-spacing:.3px;padding:5px 11px;border-radius:999px;background:var(--bgc);color:var(--c);border:1px solid var(--c);margin:0 0 10px}
+.trial{font-size:12.5px;font-weight:600;color:var(--ink);margin:-6px 0 14px}
 .rel{display:grid;gap:14px}
 .rel article{display:grid;grid-template-columns:110px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
 .rel time{font-family:Unbounded;font-size:13px;color:var(--amber);font-weight:700}
@@ -160,9 +162,9 @@ h1{font-size:20px !important}
 <div class="cta"><a class="btn sun" href="#apps">Смотреть приложения</a><a class="btn ghost" href="#rel">Что готовится</a></div>
 <div class="strip">
 <div class="stat"><b id="st-apps">2</b><span>приложения в магазине</span></div>
-<div class="stat"><b id="st-views">3 839</b><span>просмотров страниц</span></div>
-<div class="stat"><b id="st-installs">88</b><span>установок</span></div>
-<div class="stat"><b id="st-rating">5.0</b><span>средняя оценка всех приложений</span></div>
+<div class="stat"><b id="st-views">4 051</b><span>просмотров страниц</span></div>
+<div class="stat"><b id="st-installs">89</b><span>установок</span></div>
+<div class="stat"><b id="st-rating">5.0</b><span>средняя оценка оценённых приложений</span></div>
 </div></div></div>
 <section id="apps"><div class="wrap">
 <h2>Приложения флота</h2>
@@ -176,11 +178,13 @@ h1{font-size:20px !important}
 <div class="links"><a href="https://www.rustore.ru/catalog/app/com.example.lunoxod" target="_blank" rel="noopener">RuStore</a><a class="off" href="#">веб-версия скоро</a></div>
 </article>
 <article class="app" style="--c:#3d5afe;--bgc:#ece9ff">
-<span class="badge">на модерации · бесплатно · покупка 399 ₽</span>
+<span class="badge">на модерации · бесплатно</span>
 <svg width="44" height="44" viewBox="0 0 64 64" style="margin-bottom:10px"><circle cx="32" cy="32" r="30" fill="#ece9ff"/><circle cx="32" cy="32" r="18" fill="none" stroke="#3d5afe" stroke-width="6"/><circle cx="32" cy="32" r="6" fill="#3d5afe"/><path d="M32 14v12M14 32h12M50 32h-12" stroke="#3d5afe" stroke-width="5"/></svg>
 <h3>Ivetta PDD — билеты ПДД РФ</h3>
 <p>Тренажёр правил дорожного движения: билеты, разбор ошибок, режим экзамена как в ГИБДД. Полностью офлайн, с любовью к каждому ученику.</p>
-<div class="links"><a href="https://www.rustore.ru/catalog/app/ru.karuselznaniy.ivettapdd" target="_blank" rel="noopener">RuStore</a><a href="https://skrypnikvova-hue.github.io/ivetta-pdd/index.html" target="_blank" rel="noopener">веб-версия</a></div>
+<div class="price">Кнопка „Ответ“ · 399 ₽ пожизненно</div>
+<p class="trial">3 дня бесплатно, без подписки и рекламы</p>
+<div class="links"><a class="off" aria-disabled="true" tabindex="-1">Скоро в RuStore</a><a href="https://skrypnikvova-hue.github.io/ivetta-pdd/index.html" target="_blank" rel="noopener">веб-версия</a></div>
 </article>
 <article class="app" style="--c:#ff2d78;--bgc:#ffe9f1">
 <span class="badge">готовится</span>
