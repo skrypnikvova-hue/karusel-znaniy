@@ -159,9 +159,9 @@ h1{font-size:20px !important}
 <p>Мы делаем приложения как подарки: тренажёр ПДД для тех, кто учится водить, и лунный календарь для всех, кто живёт в ритме Луны. Каждое приложение работает офлайн, уважает ваши данные и не продаёт ваше внимание.</p>
 <div class="cta"><a class="btn sun" href="#apps">Смотреть приложения</a><a class="btn ghost" href="#rel">Что готовится</a></div>
 <div class="strip">
-<div class="stat"><b>2</b><span>приложения в магазине</span></div>
-<div class="stat"><b>3 839</b><span>просмотров страниц</span></div>
-<div class="stat"><b>88</b><span>установок</span></div>
+<div class="stat"><b id="st-apps">2</b><span>приложения в магазине</span></div>
+<div class="stat"><b id="st-views">3 839</b><span>просмотров страниц</span></div>
+<div class="stat"><b id="st-installs">88</b><span>установок</span></div>
 <div class="stat"><b id="st-rating">5.0</b><span>средняя оценка всех приложений</span></div>
 </div></div></div>
 <section id="apps"><div class="wrap">
@@ -211,6 +211,7 @@ h1{font-size:20px !important}
 <div style="font-size:12px">© 2026 karusel-znaniy · сделано для людей</div>
 </div></footer>
 <script>var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform="none";io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll(".app,.rel article,.stat").forEach(function(el){el.style.opacity=0;el.style.transform="translateY(18px)";el.style.transition="opacity .6s ease,transform .6s ease";io.observe(el)});</script>
+<script id="kz-stats-fetch">(function(){function fmt(n){return Number(n).toLocaleString('ru-RU')}function set(id,v){var el=document.getElementById(id);if(el&&v!=null)el.textContent=v}fetch('stats.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(s){set('st-installs',s.installs!=null?fmt(s.installs):null);set('st-views',s.views!=null?fmt(s.views):null);set('st-apps',s.apps!=null?fmt(s.apps):null);set('st-rating',s.rating_avg!=null?Number(s.rating_avg).toFixed(1):null)}).catch(function(){})})();</script>
 <script>(function(){var art=document.querySelector(".heroArt");var img=art&&art.querySelector(".kzhero");if(!art||!img)return;function ready(){art.classList.add("kz-ready")}if(img.complete&&img.naturalWidth>0){ready()}else{img.addEventListener("load",ready);img.addEventListener("error",function(){})}})();</script>
 
 <style id="kz-hero-stretch-v2">h1{transform:scaleY(1.35);transform-origin:top left}</style>
